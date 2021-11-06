@@ -25,10 +25,11 @@ class Form extends Component {
         const { titre, description } = this.state;
 
         return (
-            <form>
+            <form className="mb-3">
                 <div className="form-group">
                     <label htmlFor="titre">Titre : </label>
                     <input className="form-control"
+                        required
                         type="text"
                         name="titre"
                         id="titre"
@@ -38,13 +39,14 @@ class Form extends Component {
                 <div className="form-group">
                     <label htmlFor="description">Description : </label>
                     <input className="form-control"
+                        required
                         type="text"
                         name="description"
                         id="description"
                         value={description}
                         onChange={this.handleChange} />
                 </div>
-                <input className="btn btn-success" type="button" value="Submit" onClick={this.submitForm} />
+                <input className="btn btn-success" type="button" value="Ajouter" onClick={this.submitForm} />
             </form>
         )
     }

@@ -1,5 +1,6 @@
 import { Component } from "react/cjs/react.production.min";
 import Form from "./Form";
+import SongCard from "./Songs";
 import Table from "./Table";
 
 class App extends Component {
@@ -10,12 +11,21 @@ class App extends Component {
         description: "Essaie de pas devenir fou"
       }
     ],
+    karaokeSongs: [
+      {
+        titre: "Bakamitai",
+        yakuza: "Kiryu",
+        source: "../mp3yes/bakamitai.mp3"
+      },
+      {
+        titre: "24h Cinderella",
+        yakuza: "Majima",
+        source: "../mp3yes/cinderella.mp3"
+      }]
   }
 
   removeTask = (index) => {
-
     const { tasks } = this.state;
-
     this.setState({
       tasks: tasks.filter((tasks, i) => {
         return i !== index
@@ -47,9 +57,9 @@ class App extends Component {
         <div className="col-10">
           <Form handleSubmit={this.handleSubmit} />
         </div>
+        <SongCard songs={this.state.karaokeSongs} crazyTasks={this.state.tasks} />
       </div>
     )
-
   }
 
 }
