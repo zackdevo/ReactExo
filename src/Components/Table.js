@@ -18,7 +18,7 @@ const TableBody = (props) => {
                 <td>{row.titre}</td>
                 <td>{row.description}</td>
                 <td>
-                    <button className="btn btn-primary" onClick={() => props.removeTask(index)}>Supprimer</button>
+                    <button className="btn btn-danger" onClick={() => props.removeTask(index)}>Supprimer</button>
                 </td>
                 <td>
                     <button className="btn btn-primary" onClick={() => props.hello()}>Hi</button>
