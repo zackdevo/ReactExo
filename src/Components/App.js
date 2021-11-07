@@ -15,12 +15,12 @@ class App extends Component {
       {
         titre: "Bakamitai",
         yakuza: "Kiryu",
-        source: "../mp3yes/bakamitai.mp3"
+        lien: "https://www.youtube.com/watch?v=g3jCAyPai2Y&ab_channel=SenshiOngaku"
       },
       {
         titre: "24h Cinderella",
         yakuza: "Majima",
-        source: "../mp3yes/cinderella.mp3"
+        lien: "https://www.youtube.com/watch?v=jry5e4qN26o&ab_channel=%E7%9C%9F%E5%B3%B6%E5%90%BE%E6%9C%97%28%E5%AE%87%E5%9E%A3%E7%A7%80%E6%88%90%29-Topic"
       }]
   }
 
@@ -50,6 +50,10 @@ class App extends Component {
     })
   }
 
+  playSound = (sound) => {
+    new Audio(sound).play();
+  }
+
   render() {
     return (
       <div className="container" >
@@ -57,7 +61,7 @@ class App extends Component {
         <div className="col-10">
           <Form handleSubmit={this.handleSubmit} />
         </div>
-        <SongCard songs={this.state.karaokeSongs} crazyTasks={this.state.tasks} />
+        <SongCard playSound={this.playSound} songs={this.state.karaokeSongs} crazyTasks={this.state.tasks} />
       </div>
     )
   }

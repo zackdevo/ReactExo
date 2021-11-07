@@ -1,12 +1,11 @@
 const SongCard = (props) => {
-
     const songs = props.songs.map((song, index) => {
         return (
             <div className="card col-8  mr-1">
                 <div key={index} class="card-body">
                     <h5 className="card-title text-center">Titre : {song.titre}</h5>
                     <p className="card-text">Chanteur : {song.yakuza}</p>
-                    <button className="btn btn-success">Jouer</button>
+                    <button className="btn btn-success"><a target="_blank" href={song.lien} className="text-white">Lien</a></button>
                 </div>
             </div>
         )
