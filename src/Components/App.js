@@ -60,14 +60,10 @@ class App extends Component {
     })
   }
 
-  handleSongSubmit = async (song) => {
+  handleSongSubmit = (song) => {
     this.setState({
-      karaokeSongs: [...this.state.karaokeSongs, song]
+      karaokeSongs: [...this.state.karaokeSongs, song],
     })
-  }
-
-  playSound = (sound) => {
-    new Audio(sound).play();
   }
 
   render() {
@@ -80,7 +76,7 @@ class App extends Component {
           </div>
         </div>
         <h2 className="text-center h2 mb-3">Liste de chanson yes</h2>
-        <SongCard playSound={this.playSound} songs={this.state.karaokeSongs} crazyTasks={this.state.tasks} removeSong={this.removeSong} />
+        <SongCard songs={this.state.karaokeSongs} crazyTasks={this.state.tasks} removeSong={this.removeSong} />
         <SongForm handleSongSubmit={this.handleSongSubmit} />
       </div>
     )

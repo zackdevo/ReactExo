@@ -1,10 +1,11 @@
 
-const TableHead = () => {
+const TableHead = (props) => {
     return (
         <thead>
             <tr>
                 <th>Titre</th>
                 <th>Description</th>
+                <th>Nombre de tâches : {props.crazyTasks.length}</th>
             </tr>
         </thead>
     )
@@ -40,7 +41,7 @@ const Table = (props) => {
     const { crazyTasks, removeTask, hello, bye } = props;
     return (
         <table className="table">
-            <TableHead />
+            <TableHead crazyTasks={crazyTasks} />
             <TableBody crazyTasks={crazyTasks} removeTask={removeTask} hello={hello} bye={bye} />
         </table>
     )
